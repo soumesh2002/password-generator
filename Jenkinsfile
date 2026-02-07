@@ -12,14 +12,12 @@ pipeline {
         stage ('Install Dependencies') {
             steps {
                 bat 'uv sync'
-                bat 'uv pip install -r requirements.txt'
-                bat 'uv pip install pyinstaller'
             }
         }
 
         stage ('Build exe') {
             steps {
-                bat 'pyinstaller --onefile password_gen.py'
+                bat 'uv run pyinstaller --onefile password_gen.py'
             }
         }
 
