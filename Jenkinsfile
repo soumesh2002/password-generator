@@ -11,8 +11,8 @@ pipeline {
 
         stage ('Install Dependencies') {
             steps {
-                bat 'passgen\\Scripts\\activate'
                 bat 'uv sync'
+                // bat 'passgen\\Scripts\\activate'
                 bat 'uv pip install -r requirements.txt'
                 bat 'uv pip install pyinstaller'
             }
