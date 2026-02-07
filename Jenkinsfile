@@ -11,7 +11,6 @@ pipeline {
 
         stage ("Check UV") {
             steps {
-                bat 'where uv'
                 bat 'uv --version'
             }
         }
